@@ -21,8 +21,12 @@ app.get("/", (req, res) => {
 
 
 
-app.listen(9000, () => {
-  console.log(`API server listening at http://localhost:9000`);
+// Use PORT provided in environment or default to 3000
+var port = process.env.PORT || 3000;
+
+// Listen on `port` and 0.0.0.0
+app.listen(port, '0.0.0.0', function () {
+  // ...
 });
 
 // exports.app = functions.https.onRequest(app);
